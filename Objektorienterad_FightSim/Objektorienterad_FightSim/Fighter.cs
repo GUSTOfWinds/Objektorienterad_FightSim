@@ -9,14 +9,14 @@ namespace Objektorienterad_FightSim
     class Fighter
     {
         int hp;
-        string name;
+        public string name;
         Random generator = new Random();
 
         public Fighter()
         {
             hp = 45;
             hp += generator.Next(1, 11);
-            Console.WriteLine("Enter the name of the fighter");
+            Console.WriteLine("Enter the name of the next fighter");
             name = Console.ReadLine();
             Console.WriteLine("The Fighter " + name + " enters the fray with " + hp + " health!");
         }
@@ -24,12 +24,13 @@ namespace Objektorienterad_FightSim
         public int Attack()
         {
             int damagedealt = generator.Next(1, 11);
-
+            Console.WriteLine(name + " attacks for " + damagedealt + " damage!");
             return damagedealt;
         }
         public void Hurt(int amount)
         {
             hp -= amount;
+            Console.WriteLine(name + " has " + hp + " health remaining!");
         }
         public int getHP()
         {

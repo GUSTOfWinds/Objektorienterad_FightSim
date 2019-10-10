@@ -18,28 +18,28 @@ namespace Objektorienterad_FightSim
             while (A.IsAlive() && B.IsAlive())
             {
                 Console.WriteLine("The Fighters Clash!");
-                Console.ReadLine();
-
                 B.Hurt(A.Attack());
                 A.Hurt(B.Attack());
                 Console.WriteLine("The Fighters retreat momentarily, trying to stay upright...");
-            }
-
-            if (A.IsAlive() == true)
-            {
-                Console.WriteLine("Fighter B Fell! Fighter A has won!");
-                Console.WriteLine();
-            }
-            if (B.IsAlive() == true)
-            {
-                Console.WriteLine("Fighter A Fell! Fighter B has won!");
-                Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("Both Fighters Have Fallen! It's A Draw!");
                 Console.ReadLine();
             }
+
+            if (A.IsAlive() == false && B.IsAlive() == false)
+            {
+                Console.WriteLine("Both Fighters Fell! It's A Draw!");
+                Console.WriteLine();
+            }
+            else if (A.IsAlive() == false)
+            {
+                Console.WriteLine("Fighter " + A.name + " Fell! Fighter " + B.name + " has won!");
+                Console.WriteLine();
+            }
+            else if (B.IsAlive() == false)
+            {
+                Console.WriteLine("Fighter " + B.name + " Fell! Fighter " + A.name + " has won!");
+                Console.WriteLine();
+            }
+            Console.ReadLine();
         }
     }
 }
