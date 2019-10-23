@@ -19,7 +19,7 @@ namespace Objektorienterad_FightSim
             Console.WriteLine("Enter the name of the next fighter");
             name = Console.ReadLine();
             Console.WriteLine("The Fighter " + name + " enters the fray with " + hp + " health!");
-        }
+        } 
 
         public int Attack()
         {
